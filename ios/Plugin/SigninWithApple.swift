@@ -1,7 +1,8 @@
 import Foundation
 
 @objc public class SigninWithApple: NSObject {
-    @objc public func echo(_ value: String) -> String {
+    @objc public func authorize(_ value: Any) -> Any {
         return value
     }
+
 }
