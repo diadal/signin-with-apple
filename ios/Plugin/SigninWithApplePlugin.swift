@@ -9,7 +9,7 @@ import AuthenticationServices
 @objc(SigninWithApplePlugin)
 public class SigninWithApplePlugin: CAPPlugin, ASAuthorizationControllerDelegate {
    var call: CAPPluginCall?
-  private let implementation = AppleSign()
+  private let implementation = SigninWithApple()
     @objc func authorize(_ call: CAPPluginCall) {
         self.call = call
         let state = call.getString("state")
