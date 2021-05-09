@@ -1,6 +1,6 @@
 {
   "name": "@diadal/signin-with-apple",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sign In With Apple for Capacitor 3",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -40,8 +40,10 @@
     "docgen": "docgen --api SigninWithApplePlugin --output-readme README.md --output-json dist/docs.json",
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
-    "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "scriptjs": "^2.5.9"
   },
   "devDependencies": {
     "@capacitor/android": "next",
@@ -74,5 +76,8 @@
     "android": {
       "src": "android"
     }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@diadal"
   }
 }

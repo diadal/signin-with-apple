@@ -13,13 +13,13 @@ public class SigninWithApplePlugin: CAPPlugin, ASAuthorizationControllerDelegate
     @objc func authorize(_ call: CAPPluginCall) {
         self.call = call
         let state = call.getString("state")
-        print(state ?? "")
+        let nonce =  call.getString("nonce")
         if #available(iOS 13.0, *) {
             let appleIDProvider = ASAuthorizationAppleIDProvider()
             let request = appleIDProvider.createRequest()
             request.requestedScopes = getRequestedScopes(from: call)
             request.state = state
-            request.nonce = call.getString("nonce")
+            request.nonce = nonce
 
             let authorizationController = ASAuthorizationController(authorizationRequests: [request])
             authorizationController.delegate = self
