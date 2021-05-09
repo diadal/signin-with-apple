@@ -64,6 +64,8 @@ extension SigninWithApplePlugin {
             "response": [
                 "user": appleIDCredential.user,
                 "email": appleIDCredential.email,
+                "state": appleIDCredential?.state,
+                "nonce": appleIDCredential?.nonce,
                 "givenName": appleIDCredential.fullName?.givenName,
                 "familyName": appleIDCredential.fullName?.familyName,
                 "identityToken": String(data: appleIDCredential.identityToken!, encoding: .utf8),

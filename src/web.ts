@@ -33,6 +33,8 @@ export class SigninWithAppleWeb
                 response: {
                   user: '',
                   email: res.user?.email,
+                  state: res.user?.state,
+                  nonce: res.user?.nonce,
                   givenName: res.user?.name.firstName,
                   familyName: res.user?.name.lastName,
                   identityToken: res.authorization.id_token,
