@@ -29,8 +29,8 @@ export default defineComponent({
   name: 'PageIndex',
   setup() {
     const options: AppleSignOptions = {
-      clientId: 'app.zupago',
-      redirectURI: 'https://zupago.app/auth/apple/callback',
+      clientId: 'app.example',
+      redirectURI: 'https://example.com/auth/apple/callback',
       scopes: 'email name',
       state: '********',
       nonce: '**********',
