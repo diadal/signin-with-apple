@@ -31,14 +31,11 @@ export class SigninWithAppleWeb
             .then((res: any) => {
               const response: AppleSignResponse = {
                 response: {
-                  user: '',
+                  user: res.user,
                   email: res.user?.email,
                   state: res.user?.state,
-                  nonce: res.user?.nonce,
-                  givenName: res.user?.name.firstName,
-                  familyName: res.user?.name.lastName,
-                  identityToken: res.authorization.id_token,
-                  authorizationCode: res.authorization.code,
+                  id_token: res.authorization.id_token,
+                  code: res.authorization.code,
                 },
               };
 

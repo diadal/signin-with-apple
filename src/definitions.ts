@@ -12,13 +12,10 @@ export interface AppleSignOptions {
 
 export interface AppleSignResponse {
   response: {
-    user: string;
+    user: string[];
     email: string | null;
-    nonce: string | null;
     state: string | null;
-    givenName: string | null;
-    familyName: string | null;
-    identityToken: string;
-    authorizationCode: string;
+    id_token: string;
+    code: string;
   };
 }
