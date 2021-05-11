@@ -2,7 +2,7 @@ package ng.com.diadal;
 
 public class SigninWithApple {
 
-    public String echo(String value) {
+    public Object  authorize(Object value) {
         return value;
     }
 }

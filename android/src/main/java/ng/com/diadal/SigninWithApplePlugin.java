@@ -12,11 +12,11 @@ public class SigninWithApplePlugin extends Plugin {
     private SigninWithApple implementation = new SigninWithApple();
 
     @PluginMethod
-    public void echo(PluginCall call) {
+    public void authorize(PluginCall call) {
         String value = call.getString("value");
 
         JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
+        ret.put("value", implementation.authorize(value));
         call.resolve(ret);
     }
 }
