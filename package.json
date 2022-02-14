@@ -1,6 +1,6 @@
 {
   "name": "@diadal/signin-with-apple",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Sign In With Apple for Capacitor 3",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -78,6 +78,6 @@
     }
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@diadal"
+    "access": "public"
   }
 }
