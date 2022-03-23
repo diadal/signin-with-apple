@@ -1,4 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 import { WebPlugin } from '@capacitor/core';
+import scriptjs from 'scriptjs';
+
+
 import type {
   SigninWithApplePlugin,
   AppleSignResponse,
@@ -57,7 +62,7 @@ function loadAppleSignJS(): Promise<boolean> {
   return new Promise(resolve => {
     if (!isAppleScriptLoaded) {
       if (typeof window !== undefined) {
-        const script = require('scriptjs');
+        const script = scriptjs;
         script(appleScriptUrl, () => resolve(true));
       } else {
         resolve(false);

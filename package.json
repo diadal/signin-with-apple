@@ -1,6 +1,6 @@
 {
   "name": "@diadal/signin-with-apple",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Sign In With Apple for Capacitor 3",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -43,6 +43,7 @@
     "watch": "tsc --watch"
   },
   "dependencies": {
+    "@types/scriptjs": "^0.0.2",
     "scriptjs": "^2.5.9"
   },
   "devDependencies": {

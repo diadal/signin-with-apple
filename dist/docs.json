@@ -1,0 +1,93 @@
+{
+  "api": {
+    "name": "SigninWithApplePlugin",
+    "slug": "signinwithappleplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "authorize",
+        "signature": "(options?: AppleSignOptions | undefined) => Promise<AppleSignResponse>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "AppleSignOptions | undefined"
+          }
+        ],
+        "returns": "Promise<AppleSignResponse>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "AppleSignResponse",
+          "AppleSignOptions"
+        ],
+        "slug": "authorize"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "AppleSignResponse",
+      "slug": "applesignresponse",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "response",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "{ user: {}; email: string | null; state: string | null; id_token: string; code: string; }"
+        }
+      ]
+    },
+    {
+      "name": "AppleSignOptions",
+      "slug": "applesignoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "clientId",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "redirectURI",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "scopes",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "state",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "nonce",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    }
+  ],
+  "enums": []
+}
