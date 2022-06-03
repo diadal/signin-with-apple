@@ -1,11 +1,43 @@
-var capacitorSigninWithApple = (function (exports, core, scriptjs) {
+var capacitorSigninWithApple = (function (exports, core) {
     'use strict';
 
-    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+    /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+    /* eslint-disable @typescript-eslint/no-unused-vars */
+    // Load a script from given `url`
+    const loadScript = function (url) {
+        return new Promise(function (resolve, _reject) {
+            const script = document.createElement('script');
+            script.src = url;
+            script.addEventListener('load', function () {
+                // The script is loaded completely
+                resolve(true);
+            });
+            document.head.appendChild(script);
+        });
+    };
+    // Perform all promises in the order
+    const waterfall = function (promises) {
+        return promises.reduce(async function (p, _c) {
+            // Waiting for `p` completed
+            await p;
+            // await c();
+            return true;
+        }, 
+        // The initial value passed to the reduce method
+        Promise.resolve([]));
+    };
+    // const test = () => {
+    //   return dd
+    // }
+    // Load an array of scripts in order
+    const loadScriptsInOrder = (arrayOfJs) => {
+        const promises = arrayOfJs.map(function (url) {
+            return loadScript(url);
+        });
+        return waterfall(promises);
+    };
 
-    var scriptjs__default = /*#__PURE__*/_interopDefaultLegacy(scriptjs);
-
-    /* eslint-disable @typescript-eslint/no-var-requires */
+    /* eslint-disable no-async-promise-executor */
     const appleScriptUrl = 'https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js';
     let isAppleScriptLoaded = false;
     async function authorize(options) {
@@ -54,8 +86,8 @@ var capacitorSigninWithApple = (function (exports, core, scriptjs) {
         return new Promise(resolve => {
             if (!isAppleScriptLoaded) {
                 if (typeof window !== undefined) {
-                    const script = scriptjs__default["default"];
-                    script(appleScriptUrl, () => resolve(true));
+                    // const script = scriptjs;
+                    loadScriptsInOrder([appleScriptUrl]);
                 }
                 else {
                     resolve(false);
@@ -89,5 +121,5 @@ var capacitorSigninWithApple = (function (exports, core, scriptjs) {
 
     return exports;
 
-})({}, capacitorExports, scriptjs);
+})({}, capacitorExports);
 //# sourceMappingURL=plugin.js.map

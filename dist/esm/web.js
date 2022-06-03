@@ -1,6 +1,7 @@
+/* eslint-disable no-async-promise-executor */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { WebPlugin } from '@capacitor/core';
-import scriptjs from 'scriptjs';
+import { loadScriptsInOrder } from './script';
 const appleScriptUrl = 'https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js';
 let isAppleScriptLoaded = false;
 async function authorize(options) {
@@ -49,8 +50,8 @@ function loadAppleSignJS() {
     return new Promise(resolve => {
         if (!isAppleScriptLoaded) {
             if (typeof window !== undefined) {
-                const script = scriptjs;
-                script(appleScriptUrl, () => resolve(true));
+                // const script = scriptjs;
+                loadScriptsInOrder([appleScriptUrl]);
             }
             else {
                 resolve(false);
