@@ -38,6 +38,7 @@ var capacitorSigninWithApple = (function (exports, core) {
     };
 
     /* eslint-disable no-async-promise-executor */
+    /* eslint-disable @typescript-eslint/no-var-requires */
     const appleScriptUrl = 'https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js';
     let isAppleScriptLoaded = false;
     async function authorize(options) {
@@ -116,8 +117,6 @@ var capacitorSigninWithApple = (function (exports, core) {
 
     exports.SigninWithApple = SigninWithApple;
     exports.authorize = authorize;
-
-    Object.defineProperty(exports, '__esModule', { value: true });
 
     return exports;
 

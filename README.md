@@ -86,9 +86,9 @@ authorize(options?: AppleSignOptions | undefined) => Promise<AppleSignResponse>
 
 #### AppleSignResponse
 
-| Prop           | Type                                                                                                     |
-| -------------- | -------------------------------------------------------------------------------------------------------- |
-| **`response`** | <code>{ user: {}; email: string \| null; state: string \| null; id_token: string; code: string; }</code> |
+| Prop           | Type                                                                                                           |
+| -------------- | -------------------------------------------------------------------------------------------------------------- |
+| **`response`** | <code>{ user: string[]; email: string \| null; state: string \| null; id_token: string; code: string; }</code> |
 
 
 #### AppleSignOptions

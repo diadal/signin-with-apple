@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var core = require('@capacitor/core');
 
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
@@ -41,6 +39,7 @@ const loadScriptsInOrder = (arrayOfJs) => {
 };
 
 /* eslint-disable no-async-promise-executor */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const appleScriptUrl = 'https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js';
 let isAppleScriptLoaded = false;
 async function authorize(options) {

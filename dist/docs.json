@@ -40,7 +40,7 @@
           "tags": [],
           "docs": "",
           "complexTypes": [],
-          "type": "{ user: {}; email: string | null; state: string | null; id_token: string; code: string; }"
+          "type": "{ user: string[]; email: string | null; state: string | null; id_token: string; code: string; }"
         }
       ]
     },
@@ -89,5 +89,7 @@
       ]
     }
   ],
-  "enums": []
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
 }
