@@ -1,6 +1,6 @@
 {
   "name": "@diadal/signin-with-apple",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "type": "module",
   "description": "Sign In With Apple for Capacitor 3",
   "main": "dist/plugin.cjs.js",
